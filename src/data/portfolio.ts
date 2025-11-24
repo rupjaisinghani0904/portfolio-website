@@ -1,4 +1,8 @@
 import { SiGithub, SiLinkedin, SiGmail } from 'react-icons/si';
+import klaviyoLogo from '../assets/klaviyo_logo.jpeg';
+import scaleaiLogo from '../assets/scaleai_logo.jpeg';
+import pricelineLogo from '../assets/priceline_logo.jpeg';
+import partnersGroupLogo from '../assets/partners_group_logo.jpeg';
 
 export const portfolioData = {
     personal: {
@@ -45,7 +49,7 @@ export const portfolioData = {
             id: 1,
             role: "Frontend Developer Coop",
             company: "Klaviyo, Inc.",
-            logo: "/klaviyo_logo.jpeg",
+            logo: klaviyoLogo,
             period: "Jan 2026 - Jun 2026",
             description: [
                 "Incoming Frontend Developer Co-op."
@@ -56,7 +60,7 @@ export const portfolioData = {
             id: 2,
             role: "GenAI Technical Advisor Intern",
             company: "Scale AI",
-            logo: "/scaleai_logo.jpeg",
+            logo: scaleaiLogo,
             period: "Jun 2025 - Dec 2025",
             description: [
                 "Trained and evaluated industry leading LLMs using RLHF (Reinforcement Learning with Human Feedback) to improve output alignment and reliability.",
@@ -69,7 +73,7 @@ export const portfolioData = {
             id: 3,
             role: "Backend Developer Coop",
             company: "Priceline.com",
-            logo: "/priceline.logo.jpeg",
+            logo: pricelineLogo,
             period: "Jan 2025 - Jun 2025",
             description: [
                 "Engineered a rule-based error categorization system that enables automated classification of recurring financial errors for the first time, significantly improving resolution times, providing critical visibility into transaction failures.",
@@ -83,7 +87,7 @@ export const portfolioData = {
             id: 4,
             role: "Investment Analyst Intern",
             company: "Partners Group",
-            logo: "/partners_group_logo.jpeg",
+            logo: partnersGroupLogo,
             period: "Jun 2024 - Aug 2024",
             description: [
                 "Conducted due diligence and execution of 4 prospective direct credit transactions in sectors such as technology, healthcare, and manufacturing, contributing to investment recommendations presented to senior management.",
