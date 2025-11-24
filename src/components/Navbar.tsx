@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../utils/cn';
+import { useScrollSpy } from '../hooks/useScrollSpy';
 
 const navItems = [
     { label: 'Home', href: '#home' },
@@ -13,34 +14,9 @@ const navItems = [
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const [activeSection, setActiveSection] = useState('home');
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-
-            // Active section logic
-            const sections = navItems.map(item => item.href.substring(1));
-            const scrollPosition = window.scrollY + 100; // Offset for navbar height
-
-            for (const section of sections) {
-                const element = document.getElementById(section);
-                if (element) {
-                    const offsetTop = element.offsetTop;
-                    const offsetHeight = element.offsetHeight;
-
-                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-                        setActiveSection(section);
-                        break;
-                    }
-                }
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const sectionIds = navItems.map(item => item.href.substring(1));
+    const activeSection = useScrollSpy(sectionIds);
 
     return (
         <nav className="fixed top-0 w-full z-50 transition-all duration-300">

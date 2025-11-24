@@ -1,4 +1,4 @@
-import { SiGithub, SiLinkedin, SiX, SiGmail } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiGmail } from 'react-icons/si';
 
 export const portfolioData = {
     personal: {
