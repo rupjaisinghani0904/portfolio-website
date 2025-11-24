@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../utils/cn';
 
@@ -46,14 +47,14 @@ export const Navbar = () => {
             {/* Gradient Blur Background */}
             <div
                 className={cn(
-                    "absolute inset-0 w-full h-32 -top-4 pointer-events-none transition-opacity duration-300 bg-white/30",
-                    scrolled ? "opacity-100" : "opacity-0"
+                    "absolute w-full pointer-events-none opacity-100",
+                    isOpen ? "h-100" : "h-24"
                 )}
                 style={{
-                    backdropFilter: 'blur(12px)',
-                    WebkitBackdropFilter: 'blur(12px)',
-                    maskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)'
+                    backdropFilter: 'blur(25px)',
+                    WebkitBackdropFilter: 'blur(25px)',
+                    maskImage: 'linear-gradient(to bottom, white 70%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, white 70%, transparent 100%)'
                 }}
             />
 
@@ -68,7 +69,7 @@ export const Navbar = () => {
                                         key={item.label}
                                         href={item.href}
                                         className={cn(
-                                            "px-3 py-2 rounded-3xl text-sm font-medium transition-all duration-200",
+                                            "px-3 py-2 rounded-3xl text-md font-medium transition-all duration-200",
                                             isActive
                                                 ? "bg-blue-600 text-white shadow-md"
                                                 : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
@@ -86,37 +87,67 @@ export const Navbar = () => {
                             onClick={() => setIsOpen(!isOpen)}
                             className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 focus:outline-none"
                         >
-                            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                            <AnimatePresence mode="wait">
+                                {isOpen ? (
+                                    <motion.div
+                                        key="close"
+                                        initial={{ rotate: -90, opacity: 0 }}
+                                        animate={{ rotate: 0, opacity: 1 }}
+                                        exit={{ rotate: 90, opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <X className="h-6 w-6" />
+                                    </motion.div>
+                                ) : (
+                                    <motion.div
+                                        key="menu"
+                                        initial={{ rotate: 90, opacity: 0 }}
+                                        animate={{ rotate: 0, opacity: 1 }}
+                                        exit={{ rotate: -90, opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    >
+                                        <Menu className="h-6 w-6" />
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </button>
                     </div>
                 </div>
             </div>
 
             {/* Mobile menu */}
-            {isOpen && (
-                <div className="md:hidden bg-white border-t">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        {navItems.map((item) => {
-                            const isActive = activeSection === item.href.substring(1);
-                            return (
-                                <a
-                                    key={item.label}
-                                    href={item.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className={cn(
-                                        "block px-3 py-2 rounded-lg text-base font-medium transition-colors",
-                                        isActive
-                                            ? "bg-blue-600 text-white font-semibold"
-                                            : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
-                                    )}
-                                >
-                                    {item.label}
-                                </a>
-                            );
-                        })}
-                    </div>
-                </div>
-            )}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden relative z-50"
+                    >
+                        <div className="px-4 pt-2 pb-4 space-y-1">
+                            {navItems.map((item) => {
+                                const isActive = activeSection === item.href.substring(1);
+                                return (
+                                    <a
+                                        key={item.label}
+                                        href={item.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className={cn(
+                                            "block z-50 px-3 py-2 rounded-lg text-base font-medium transition-colors",
+                                            isActive
+                                                ? "bg-blue-600 text-white font-semibold shadow-sm"
+                                                : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
+                                        )}
+                                    >
+                                        {item.label}
+                                    </a>
+                                );
+                            })}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

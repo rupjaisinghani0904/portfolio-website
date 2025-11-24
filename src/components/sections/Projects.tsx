@@ -7,12 +7,12 @@ import { portfolioData } from '../../data/portfolio';
 
 export const Projects = () => {
     return (
-        <Section id="projects" className="bg-white">
+        <Section id="projects" className="bg-white max-w-full">
             <SectionTitle
                 title="Featured Projects"
                 subtitle="A selection of my recent work and side projects."
             />
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                 {portfolioData.projects.map((project, index) => (
                     <Card key={project.id} delay={index * 0.1} className="flex flex-col h-full">
                         <div className="flex-1">
@@ -22,7 +22,7 @@ export const Projects = () => {
                                 {project.tags.map((tag) => (
                                     <span
                                         key={tag}
-                                        className="px-2 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-md"
+                                        className="px-1 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-md"
                                     >
                                         {tag}
                                     </span>
@@ -31,6 +31,7 @@ export const Projects = () => {
                         </div>
                         <a
                             href={project.link}
+                            target="_blank"
                             className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
                         >
                             View Project <ExternalLink className="ml-1 w-4 h-4" />

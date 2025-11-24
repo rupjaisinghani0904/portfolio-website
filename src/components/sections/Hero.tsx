@@ -12,7 +12,7 @@ export const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
                         Hi, I'm <span className="text-blue-600">{portfolioData.personal.name}</span>
                     </h1>
                 </motion.div>
@@ -23,7 +23,7 @@ export const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <p className="text-md md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-md md:max-w-xl lg:max-w-2xl mx-auto">
-                        {portfolioData.personal.title} attending {portfolioData.personal.college} in {portfolioData.personal.location}.
+                        Developer attending {portfolioData.personal.college} in {portfolioData.personal.location}.
                         Looking for opportunities to build impactful projects.
                     </p>
                 </motion.div>
@@ -35,10 +35,11 @@ export const Hero = () => {
                     className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
                     <a
-                        href="#projects"
+                        href={portfolioData.personal.resume}
+                        target="_blank"
                         className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-colors"
                     >
-                        View Work
+                        View Resume
                         <ArrowRight className="ml-2 h-5 w-5" />
                     </a>
                     <a

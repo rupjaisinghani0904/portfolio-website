@@ -23,7 +23,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({ title, subtitle }) =
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-lg text-gray-600 max-w-2xl mx-auto"
+                    className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
                 >
                     {subtitle}
                 </motion.p>

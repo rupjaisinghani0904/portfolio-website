@@ -1,9 +1,8 @@
 import React from 'react';
-import type { LucideIcon } from 'lucide-react';
 
 interface SocialLinkProps {
     href: string;
-    icon: LucideIcon;
+    icon: React.ElementType;
     label: string;
 }
 
