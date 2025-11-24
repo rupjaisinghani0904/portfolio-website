@@ -45,7 +45,7 @@ export const portfolioData = {
             id: 1,
             role: "Frontend Developer Coop",
             company: "Klaviyo, Inc.",
-            logo: "src/assets/klaviyo_logo.jpeg",
+            logo: "/klaviyo_logo.jpeg",
             period: "Jan 2026 - Jun 2026",
             description: [
                 "Incoming Frontend Developer Co-op."
@@ -56,7 +56,7 @@ export const portfolioData = {
             id: 2,
             role: "GenAI Technical Advisor Intern",
             company: "Scale AI",
-            logo: "src/assets/scaleai_logo.jpeg",
+            logo: "/scaleai_logo.jpeg",
             period: "Jun 2025 - Dec 2025",
             description: [
                 "Trained and evaluated industry leading LLMs using RLHF (Reinforcement Learning with Human Feedback) to improve output alignment and reliability.",
@@ -69,7 +69,7 @@ export const portfolioData = {
             id: 3,
             role: "Backend Developer Coop",
             company: "Priceline.com",
-            logo: "src/assets/priceline.logo.jpeg",
+            logo: "/priceline.logo.jpeg",
             period: "Jan 2025 - Jun 2025",
             description: [
                 "Engineered a rule-based error categorization system that enables automated classification of recurring financial errors for the first time, significantly improving resolution times, providing critical visibility into transaction failures.",
@@ -83,7 +83,7 @@ export const portfolioData = {
             id: 4,
             role: "Investment Analyst Intern",
             company: "Partners Group",
-            logo: "src/assets/partners_group_logo.jpeg",
+            logo: "/partners_group_logo.jpeg",
             period: "Jun 2024 - Aug 2024",
             description: [
                 "Conducted due diligence and execution of 4 prospective direct credit transactions in sectors such as technology, healthcare, and manufacturing, contributing to investment recommendations presented to senior management.",
