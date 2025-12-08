@@ -6,7 +6,7 @@ import { portfolioData } from '../../data/portfolio';
 
 export const Contact = () => {
     return (
-        <Section id="contact" className="bg-gray-50">
+        <Section id="contact" className="bg-gray-50 dark:bg-gray-900 max-w-full">
             <SectionTitle
                 title="Get in Touch"
                 subtitle="Feel free to reach out for collaborations or just a friendly hello."
@@ -21,7 +21,7 @@ export const Contact = () => {
                     />
                 ))}
             </div>
-            <div className="mt-12 text-center text-gray-500 text-sm">
+            <div className="mt-12 text-center text-gray-500 dark:text-gray-400 text-sm">
                 <p>© {new Date().getFullYear()} {portfolioData.personal.name}. All rights reserved.</p>
             </div>
         </Section>

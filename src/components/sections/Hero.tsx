@@ -5,15 +5,15 @@ import { portfolioData } from '../../data/portfolio';
 
 export const Hero = () => {
     return (
-        <Section id="home" className="min-h-screen flex items-center justify-center pt-16">
+        <Section id="home" className="min-h-screen flex items-center justify-center pt-16 dark:bg-gray-900 max-w-full">
             <div className="text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
-                        Hi, I'm <span className="text-blue-600">{portfolioData.personal.name}</span>
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
+                        Hi, I'm <span className="text-blue-600 dark:text-blue-400">{portfolioData.personal.name}</span>
                     </h1>
                 </motion.div>
 
@@ -22,9 +22,9 @@ export const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <p className="text-md md:text-xl lg:text-2xl text-gray-600 mb-8 max-w-md md:max-w-xl lg:max-w-2xl mx-auto">
+                    <p className="text-md md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-md md:max-w-xl lg:max-w-2xl mx-auto">
                         Developer attending {portfolioData.personal.college} in {portfolioData.personal.location}.
-                        Looking for opportunities to build impactful projects.
+                        Looking for opportunities to build scalable projects.
                     </p>
                 </motion.div>
 
@@ -37,14 +37,14 @@ export const Hero = () => {
                     <a
                         href={portfolioData.personal.resume}
                         target="_blank"
-                        className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                        className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors"
                     >
                         View Resume
                         <ArrowRight className="ml-2 h-5 w-5" />
                     </a>
                     <a
                         href="#contact"
-                        className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-full text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+                        className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 dark:border-gray-700 text-base font-medium rounded-full text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                     >
                         Contact Me
                     </a>

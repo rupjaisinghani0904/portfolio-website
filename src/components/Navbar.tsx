@@ -3,12 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../utils/cn';
 import { useScrollSpy } from '../hooks/useScrollSpy';
+import { ThemeToggle } from './ui/ThemeToggle';
 
 const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
 ];
 
@@ -23,7 +24,7 @@ export const Navbar = () => {
             {/* Gradient Blur Background */}
             <div
                 className={cn(
-                    "absolute w-full pointer-events-none opacity-100",
+                    "absolute w-full pointer-events-none opacity-100 dark:opacity-90",
                     isOpen ? "h-100" : "h-24"
                 )}
                 style={{
@@ -48,7 +49,7 @@ export const Navbar = () => {
                                             "px-3 py-2 rounded-3xl text-md font-medium transition-all duration-200",
                                             isActive
                                                 ? "bg-blue-600 text-white shadow-md"
-                                                : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                                                : "text-gray-600 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800"
                                         )}
                                     >
                                         {item.label}
@@ -56,6 +57,11 @@ export const Navbar = () => {
                                 );
                             })}
                         </div>
+                    </div>
+
+                    {/* Theme Toggle - Absolute Right */}
+                    <div className="absolute right-0 flex items-center">
+                        <ThemeToggle />
                     </div>
 
                     <div className="md:hidden absolute left-4">
@@ -113,7 +119,7 @@ export const Navbar = () => {
                                             "block z-50 px-3 py-2 rounded-lg text-base font-medium transition-colors",
                                             isActive
                                                 ? "bg-blue-600 text-white font-semibold shadow-sm"
-                                                : "text-gray-700 hover:text-gray-900 hover:bg-white/50"
+                                                : "text-gray-700 hover:text-gray-900 hover:bg-white/50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-gray-800"
                                         )}
                                     >
                                         {item.label}

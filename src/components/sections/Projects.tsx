@@ -9,13 +9,13 @@ const ProjectCard = ({ project, index }: { project: typeof portfolioData.project
     return (
         <Card delay={index * 0.1} className="flex flex-col h-full">
             <div className="flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-6">
                     {project.tags.map((tag) => (
                         <span
                             key={tag}
-                            className="px-1 py-1 text-xs font-medium text-gray-600 bg-gray-100 rounded-md"
+                            className="px-1 py-1 text-xs font-medium text-gray-600 bg-gray-100 dark:text-gray-300 dark:bg-gray-700 rounded-md"
                         >
                             {tag}
                         </span>
@@ -26,7 +26,7 @@ const ProjectCard = ({ project, index }: { project: typeof portfolioData.project
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors"
             >
                 View Project <ExternalLink className="ml-1 w-4 h-4" />
             </a>
@@ -36,7 +36,7 @@ const ProjectCard = ({ project, index }: { project: typeof portfolioData.project
 
 export const Projects = () => {
     return (
-        <Section id="projects" className="bg-white max-w-full">
+        <Section id="projects" className="bg-gray-50 dark:bg-gray-900 max-w-full">
             <SectionTitle
                 title="Featured Projects"
                 subtitle="A selection of my recent work and side projects."

@@ -12,7 +12,7 @@ export const portfolioData = {
         college: "Northeastern University",
         location: "Boston, MA",
         resume: "https://drive.google.com/file/d/1p6azYPgzwAnVZju7GW3fSv-HvJS7tpxA/view?usp=sharing",
-        about: "I am an Honors student at Northeastern University, pursuing a Combined Major in Computer Science and Mathematics. My academic and professional journey is driven by the challenge of solving complex problems and the vision of creating innovative technology. I am deeply interested in the dynamic landscape surrounding tech, observing market trends and investment to inform where meaningful disruption can occur. I have hands-on software engineering experience with technologies accross the stack. My goal is to apply this analytical foundation and technical acumen to engineer impactful and ethical technologies that provide real world value.",
+        about: "I am an Honors student at Northeastern University pursuing a combined major in Computer Science and Mathematics.  In an industry that often prioritizes rapid deployment, I believe in writing clean, maintainable code that prioritizes long-term stability over short-term fixes. My technical focus centers on the intersection of full-stack development and artificial intelligence. I am particularly interested in the ethical implications of the systems we build, striving to engineer technology that is algorithmically responsible and economically viable. I constantly analyze market and investment trends to understand the broader context of my work, ensuring that I am solving the right problems, not just the most convenient ones.",
         socials: [
             {
                 name: "GitHub",

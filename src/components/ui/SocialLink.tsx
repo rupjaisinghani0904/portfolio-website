@@ -12,7 +12,7 @@ export const SocialLink: React.FC<SocialLinkProps> = ({ href, icon: Icon, label 
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 transition-colors"
+            className="p-3 bg-gray-100 rounded-full text-gray-600 hover:bg-gray-200 hover:text-gray-900 transition-colors dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
             aria-label={label}
         >
             <Icon className="w-5 h-5" />
